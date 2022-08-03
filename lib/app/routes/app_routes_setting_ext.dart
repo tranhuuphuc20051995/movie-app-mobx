@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../app/routes/app_routes.dart';
 import '../../presentation/pages/home/home_page.dart';
 import '../../presentation/pages/movie_detail/detail_page.dart';
+import '../../presentation/pages/movie_trailer/trailer_page.dart';
 import '../../presentation/widgets/not_found_page.dart';
 
 extension GenerateRoute on RouteSettings {
@@ -10,12 +11,17 @@ extension GenerateRoute on RouteSettings {
     switch (name) {
       case AppRoute.homePage:
         return _getPageRoute<void>(
-          child: const HomePage(),
+          child: HomePage(),
           routeSettings: this,
         );
       case AppRoute.movieDetailPage:
         return _getPageRoute<void>(
-          child: const MovieDetailPage(),
+          child: MovieDetailPage(),
+          routeSettings: this,
+        );
+      case AppRoute.movieTrailerPage:
+        return _getPageRoute<void>(
+          child: MovieTrailerPage(),
           routeSettings: this,
         );
       default:
