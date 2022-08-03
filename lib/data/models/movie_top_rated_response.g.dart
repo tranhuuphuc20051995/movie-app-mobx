@@ -13,8 +13,8 @@ MovieTopRatedResponse _$MovieTopRatedResponseFromJson(
       (json['results'] as List<dynamic>)
           .map((e) => Movie.fromJson(e as Map<String, dynamic>))
           .toList(),
-      json['totalPages'] as int,
-      json['totalResults'] as int,
+      json['total_pages'] as int,
+      json['total_results'] as int,
     );
 
 Map<String, dynamic> _$MovieTopRatedResponseToJson(
@@ -22,40 +22,40 @@ Map<String, dynamic> _$MovieTopRatedResponseToJson(
     <String, dynamic>{
       'page': instance.page,
       'results': instance.movies,
-      'totalPages': instance.totalPages,
-      'totalResults': instance.totalResults,
+      'total_pages': instance.totalPages,
+      'total_results': instance.totalResults,
     };
 
 Movie _$MovieFromJson(Map<String, dynamic> json) => Movie(
       json['adult'] as bool,
-      json['backdropPath'] as String,
-      (json['genreIds'] as List<dynamic>).map((e) => e as int).toList(),
+      json['backdrop_path'] as String,
+      (json['genre_ids'] as List<dynamic>).map((e) => e as int).toList(),
       json['id'] as int,
-      json['originalLanguage'] as String,
-      json['originalTitle'] as String,
+      json['original_language'] as String,
+      json['original_title'] as String,
       json['overview'] as String,
       (json['popularity'] as num).toDouble(),
-      json['posterPath'] as String,
-      json['releaseDate'] as String,
+      json['poster_path'] as String,
+      json['release_date'] as String,
       json['title'] as String,
       json['video'] as bool,
-      (json['voteAverage'] as num).toDouble(),
-      json['voteCount'] as int,
+      (json['vote_average'] as num).toDouble(),
+      json['vote_count'] as int,
     );
 
 Map<String, dynamic> _$MovieToJson(Movie instance) => <String, dynamic>{
       'adult': instance.adult,
-      'backdropPath': instance.backdropPath,
-      'genreIds': instance.genreIds,
+      'backdrop_path': instance.backdropPath,
+      'genre_ids': instance.genreIds,
       'id': instance.id,
-      'originalLanguage': instance.originalLanguage,
-      'originalTitle': instance.originalTitle,
+      'original_language': instance.originalLanguage,
+      'original_title': instance.originalTitle,
       'overview': instance.overview,
       'popularity': instance.popularity,
-      'posterPath': instance.posterPath,
-      'releaseDate': instance.releaseDate,
+      'poster_path': instance.posterPath,
+      'release_date': instance.releaseDate,
       'title': instance.title,
       'video': instance.video,
-      'voteAverage': instance.voteAverage,
-      'voteCount': instance.voteCount,
+      'vote_average': instance.voteAverage,
+      'vote_count': instance.voteCount,
     };

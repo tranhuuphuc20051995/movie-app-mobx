@@ -29,6 +29,7 @@ class Video {
   int size;
   String type;
   bool official;
+  @JsonKey(name: 'published_at')
   String publishedAt;
   String id;
 

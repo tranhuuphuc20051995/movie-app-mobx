@@ -29,7 +29,7 @@ Video _$VideoFromJson(Map<String, dynamic> json) => Video(
       json['size'] as int,
       json['type'] as String,
       json['official'] as bool,
-      json['publishedAt'] as String,
+      json['published_at'] as String,
       json['id'] as String,
     );
 
@@ -42,6 +42,6 @@ Map<String, dynamic> _$VideoToJson(Video instance) => <String, dynamic>{
       'size': instance.size,
       'type': instance.type,
       'official': instance.official,
-      'publishedAt': instance.publishedAt,
+      'published_at': instance.publishedAt,
       'id': instance.id,
     };
