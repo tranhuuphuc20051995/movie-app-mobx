@@ -8,9 +8,9 @@ part of 'video_response.dart';
 
 VideoResponse _$VideoResponseFromJson(Map<String, dynamic> json) =>
     VideoResponse(
-      json['id'] as int,
-      (json['results'] as List<dynamic>)
-          .map((e) => Video.fromJson(e as Map<String, dynamic>))
+      json['id'] as int?,
+      (json['results'] as List<dynamic>?)
+          ?.map((e) => Video.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
@@ -21,16 +21,16 @@ Map<String, dynamic> _$VideoResponseToJson(VideoResponse instance) =>
     };
 
 Video _$VideoFromJson(Map<String, dynamic> json) => Video(
-      json['iso6391'] as String,
-      json['iso31661'] as String,
-      json['name'] as String,
-      json['key'] as String,
-      json['site'] as String,
-      json['size'] as int,
-      json['type'] as String,
-      json['official'] as bool,
-      json['published_at'] as String,
-      json['id'] as String,
+      json['iso6391'] as String?,
+      json['iso31661'] as String?,
+      json['name'] as String?,
+      json['key'] as String?,
+      json['site'] as String?,
+      json['size'] as int?,
+      json['type'] as String?,
+      json['official'] as bool?,
+      json['published_at'] as String?,
+      json['id'] as String?,
     );
 
 Map<String, dynamic> _$VideoToJson(Video instance) => <String, dynamic>{
