@@ -18,15 +18,18 @@ class _MovieClientService implements MovieClientService {
   String? baseUrl;
 
   @override
-  Future<MovieTopRatedResponse> getTopRated() async {
+  Future<MovieTopRatedResponse> getTopRated(apiKey, language) async {
     const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{
+      r'api_key': apiKey,
+      r'language': language
+    };
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<MovieTopRatedResponse>(
             Options(method: 'GET', headers: _headers, extra: _extra)
-                .compose(_dio.options, 'top_rated',
+                .compose(_dio.options, 'movie/top_rated',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = MovieTopRatedResponse.fromJson(_result.data!);
@@ -34,9 +37,12 @@ class _MovieClientService implements MovieClientService {
   }
 
   @override
-  Future<MovieDetailResponse> getMovieDetail(id) async {
+  Future<MovieDetailResponse> getMovieDetail(apiKey, language, id) async {
     const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{
+      r'api_key': apiKey,
+      r'language': language
+    };
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
@@ -50,9 +56,12 @@ class _MovieClientService implements MovieClientService {
   }
 
   @override
-  Future<VideoResponse> getVideosOfMovie(id) async {
+  Future<VideoResponse> getVideosOfMovie(apiKey, language, id) async {
     const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{
+      r'api_key': apiKey,
+      r'language': language
+    };
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
