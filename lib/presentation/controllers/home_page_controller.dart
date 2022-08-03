@@ -3,7 +3,6 @@ import 'package:movie_app/domain/usecase/movie/get_movie_top_rated_use_case.dart
 
 import '../../data/models/movie_top_rated_response.dart';
 import '../../domain/model/request_params/base_request_param.dart';
-import '../../domain/model/request_params/movie_request_param.dart';
 
 part 'home_page_controller.g.dart';
 
@@ -19,10 +18,11 @@ abstract class _HomePageController with Store {
 
   @action
   void fetchMoviesTopRate() {
-    const MovieDetailRequestParam();
     getMovieTopRatedUseCase.call(params: const BaseRequestParam()).then(
-          (value) {
-        movies.addAll(value.movies);
+      (value) {
+        if (value.movies?.isNotEmpty == true) {
+          movies.addAll(value.movies!);
+        }
       },
     );
   }
