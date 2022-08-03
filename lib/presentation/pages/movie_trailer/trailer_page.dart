@@ -12,10 +12,6 @@ class MovieTrailerPage extends StatelessWidget {
     final args = ModalRoute.of(context)!.settings.arguments as TrailerArguments;
     _controller = YoutubePlayerController(
       initialVideoId: args.trailerLinks[0],
-      flags: const YoutubePlayerFlags(
-        autoPlay: true,
-        mute: true,
-      ),
     );
     return Scaffold(
       appBar: AppBar(
